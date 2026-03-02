@@ -83,11 +83,9 @@ export const user = {
             });
             const userInvite = data[0];
             const positionExtId = '66e678d947480b243fc573fb';
-            const positionExtName = 'External User';
             const roleExtId = '67435a2c6521f76d8ac46f30';
             const roleExtName = 'Ext';
 
-            const positionName = userInvite?.position?.name ? userInvite?.position?.name : positionExtName;
             const roleName = userInvite?.role?.name ? userInvite?.role?.name : roleExtName;
 
             const profile = {
@@ -114,7 +112,7 @@ export const user = {
                     .then((res) => {
                         if (res.total === 0) {
                             try {
-                                client.service('profiles').create(this.profile);
+                                client.service('profiles').create(data);
                             } catch (error) {
                                 console.debug('Failed to create profile', error);
                                 dispatch.toast.alert({

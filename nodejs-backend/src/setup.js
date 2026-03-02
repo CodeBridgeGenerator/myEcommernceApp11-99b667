@@ -24,7 +24,7 @@ module.exports = async (app) => {
   const superRole = getSuperRole(fileData);
   const superPosi = getSuperPosition(fileData);
   const userInvites = userEmails.map((email) => {
-    return  {
+    return {
       emailToInvite: email,
       status: false,
       sendMailCounter: 0,

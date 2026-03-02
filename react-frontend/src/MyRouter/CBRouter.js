@@ -111,8 +111,8 @@ const CBRouter = (props) => {
             <Route path="/userPhones" exact element={<UserPhoneProjectLayoutPage />} />
             <Route path="/userChangePassword/:singleUserChangePasswordId" exact element={<SingleUserChangePasswordPage />} />
             <Route path="/userChangePassword" exact element={<UserChangePasswordProjectLayoutPage />} />
-            <Route path="/loginHistory" exact element={<UserLoginPage />} />
-            <Route path="/loginHistory/:singleLoginHistoryId" exact element={<SingleUserLoginPage />} />
+            <Route path="/loginHistories" exact element={<UserLoginPage />} />
+            <Route path="/loginHistories/:singleLoginHistoryId" exact element={<SingleUserLoginPage />} />
 
             {/* dashboards */}
             <Route path="/DashboardAdminControl" exact element={<DashboardAdminControl />} />

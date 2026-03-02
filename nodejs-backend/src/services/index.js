@@ -4,5 +4,5 @@ const highways = require("./highways/highways.service.js");
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
   app.configure(highways);
-    // ~cb-add-configure-service-name~
+  // ~cb-add-configure-service-name~
 };

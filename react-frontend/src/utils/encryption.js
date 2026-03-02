@@ -1,5 +1,6 @@
 const CryptoJS = require('crypto-js');
 const SECRET_KEY = process.env.REACT_APP_SECRETKEY;
+const excludedTables = ['users', 'authentication','permissionServices'];
 
 export function encryptData(data) {
     if (!SECRET_KEY) {
@@ -10,7 +11,6 @@ export function encryptData(data) {
     try {
         if (!data) throw new Error('No data provided for encryption');
         const ciphertext = CryptoJS.AES.encrypt(JSON.stringify(data), SECRET_KEY).toString();
-        console.log('encryptData', ciphertext);
         return ciphertext;
     } catch (error) {
         console.error('Encryption error:', error);
@@ -39,7 +39,7 @@ export const decryptResponseClientHook = (context) => {
     const { result, path } = context;
     if (!result) return context;
     if (result && result.encrypted) {
-        if (!['users', 'authentication'].includes(path)) context.result = decryptData(result.encrypted);
+        if (!excludedTables.includes(path)) context.result = decryptData(result.encrypted);
     }
     return context;
 };
@@ -56,7 +56,7 @@ export const encryptRequestClientHook = (context) => {
     }
 
     if (data && !data.encrypted) {
-        if (!['users', 'authentication'].includes(path)) {
+        if (!excludedTables.includes(path)) {
             context.data = {
                 encrypted: encryptData(data)
             };

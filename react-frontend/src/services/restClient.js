@@ -44,10 +44,10 @@ const shouldSkipAuthRedirect = () => {
 
 app.hooks({
     before: {
-        all: [encryptRequestClientHook]
+        find: [encryptRequestClientHook]
     },
     after: {
-        all: [decryptResponseClientHook]
+        find: [decryptResponseClientHook]
     },
     error: {
         all: [

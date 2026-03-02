@@ -20,13 +20,7 @@
   "stack": [
     {
       "appName": "nodejs-backend",
-      "environments": [
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
+      "environments": [null, null, null, null, null],
       "pathToLogo": {
         "s": "/assets/applications_logos/nodejs-s.png",
         "l": "/assets/applications_logos/nodejs.png"
@@ -38,13 +32,7 @@
     },
     {
       "appName": "react-frontend",
-      "environments": [
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
+      "environments": [null, null, null, null, null],
       "pathToLogo": {
         "s": "/assets/applications_logos/react-s.png",
         "l": "/assets/applications_logos/react.png"

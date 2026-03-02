@@ -1,25 +1,27 @@
-import React from 'react';
-import ProjectLayout from '../../Layouts/ProjectLayout';
-import { connect } from 'react-redux';
-import JobQuesPage from './JobQuesPage';
+import React from "react";
+import ProjectLayout from "../../Layouts/ProjectLayout";
+import { connect } from "react-redux";
+import JobQuesPage from "./JobQuesPage";
 
 const JobQueProjectLayoutPage = (props) => {
-    return (
-        <ProjectLayout>
-            <JobQuesPage />
-        </ProjectLayout>
-    );
+  return (
+    <ProjectLayout>
+      <JobQuesPage />
+    </ProjectLayout>
+  );
 };
 
 const mapState = (state) => {
-    const { user, isLoggedIn } = state.auth;
-    return { user, isLoggedIn };
+  const { user, isLoggedIn } = state.auth;
+  return { user, isLoggedIn };
 };
 
 const mapDispatch = (dispatch) => ({
-    alert: (data) => dispatch.toast.alert(data),
-    hasServicePermission: (service) => dispatch.perms.hasServicePermission(service),
-    hasServiceFieldsPermission: (service) => dispatch.perms.hasServiceFieldsPermission(service)
+  alert: (data) => dispatch.toast.alert(data),
+  hasServicePermission: (service) =>
+    dispatch.perms.hasServicePermission(service),
+  hasServiceFieldsPermission: (service) =>
+    dispatch.perms.hasServiceFieldsPermission(service),
 });
 
 export default connect(mapState, mapDispatch)(JobQueProjectLayoutPage);
